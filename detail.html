@@ -13,21 +13,12 @@
       rel="stylesheet"
     />
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              georgia: ["Georgia", "serif"],
-            },
-          },
-        },
-      };
-    </script>
     <style>
+      html {
+        scroll-behavior: smooth;
+      }
       body {
         font-family: "Roboto", sans-serif;
-        scroll-behavior: smooth;
       }
     </style>
   </head>
@@ -510,6 +501,33 @@
         </div>
       </div>
     </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (event) {
+            event.preventDefault();
+
+            const targetId = this.getAttribute("href").substring(1);
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              const isMobile = window.innerWidth <= 768;
+              const offset = isMobile ? 100 : 270;
+              console.log("offset", offset);
+
+              const elementPosition = targetElement.offsetTop;
+              const offsetPosition = elementPosition - offset;
+
+              window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+      });
+    </script>
 
     <script>
       const menuItems = [

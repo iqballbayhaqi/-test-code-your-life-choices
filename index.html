@@ -13,21 +13,12 @@
       rel="stylesheet"
     />
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              georgia: ["Georgia", "serif"],
-            },
-          },
-        },
-      };
-    </script>
     <style>
+      html {
+        scroll-behavior: smooth;
+      }
       body {
         font-family: "Roboto", sans-serif;
-        scroll-behavior: smooth;
       }
     </style>
   </head>
@@ -125,7 +116,10 @@
       <p>
         Click on your star sign to read your free daily Australian horoscope.
       </p>
-      <div id="horoscope-menu" class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-[32px]"></div>
+      <div
+        id="horoscope-menu"
+        class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-[32px]"
+      ></div>
     </div>
 
     <div
@@ -149,39 +143,58 @@
         <p>
           YourLifeChoices is Australia's most established and trusted digital
           publication for the 50+ audience, with a core focus on helping
-          Australians navigate midlife and the retirement landscape.<br/><br/>Since 2000,
-          YourLifeChoices has been providing Australians with essential news,
-          articles and retirement resources - and membership is FREE!
+          Australians navigate midlife and the retirement landscape.<br /><br />Since
+          2000, YourLifeChoices has been providing Australians with essential
+          news, articles and retirement resources - and membership is FREE!
         </p>
       </div>
       <div class="text-center sm:text-start">
         <p class="uppercase font-bold text-xl pb-[20px]">Follow us</p>
         <div class="flex items-center gap-2 justify-center sm:justify-start">
           <a href="#">
-            <img src="./assets/fb-logo.svg" height="40" width="40" alt="fb logo" />
+            <img
+              src="./assets/fb-logo.svg"
+              height="40"
+              width="40"
+              alt="fb logo"
+            />
           </a>
           <a href="#">
-            <img src="./assets/x-logo.svg" height="40" width="40" alt="x logo" />
+            <img
+              src="./assets/x-logo.svg"
+              height="40"
+              width="40"
+              alt="x logo"
+            />
           </a>
         </div>
       </div>
     </div>
 
     <script>
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-          anchor.addEventListener('click', function(e) {
-              e.preventDefault();
-              
-              const targetId = this.getAttribute('href').substring(1);
-              const targetElement = document.getElementById(targetId);
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (event) {
+            event.preventDefault();
 
-              if (targetElement) {
-                  window.scrollTo({
-                      top: targetElement.offsetTop,
-                      behavior: 'smooth'
-                  });
-              }
+            const targetId = this.getAttribute("href").substring(1);
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              const isMobile = window.innerWidth <= 768;
+              const offset = isMobile ? 100 : 270;
+              console.log("offset", offset);
+
+              const elementPosition = targetElement.offsetTop;
+              const offsetPosition = elementPosition - offset;
+
+              window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth",
+              });
+            }
           });
+        });
       });
     </script>
 
@@ -316,7 +329,7 @@
 
       dataHoroscope.forEach((item) => {
         const container = document.createElement("a");
-        container.href = `#${item.title}`
+        container.href = `#${item.title}`;
         container.className = `rounded-lg shadow-md bg-[${item.color}] flex flex-col items-center cursor-pointer`;
         container.innerHTML = `
                 <img src="${item.logo}" alt="${item.title}" class="w-[88px] h-[88px] my-[24px]">
@@ -493,7 +506,7 @@
 
       dataListHoroscope.forEach((horoscope) => {
         const card = document.createElement("div");
-        card.id = horoscope.title
+        card.id = horoscope.title;
         card.className =
           "bg-white py-[24px] sm:py-10 px-[24px] sm:px-16 rounded-xl border border-gray-300 mb-6 divide-y-2 divide-[#E4E4E4]";
 
@@ -522,7 +535,9 @@
                             }</p>
                           </div>
                           <a href="/detail.html" class="text-red-500 underline font-bold cursor-pointer">
-                            Click here for your free daily ${horoscope.title} horoscope
+                            Click here for your free daily ${
+                              horoscope.title
+                            } horoscope
                           </a>
                         </div>
                         <div class="sm:col-span-2 col-start-4 pt-8 sm:pt-0">
