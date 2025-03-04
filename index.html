@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YourLifeChoices</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              georgia: ["Georgia", "serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="bg-white drop-shadow-md fixed top-0 z-9 w-full">
+      <div
+        class="item-center gap-[32px] p-4 bg-[#222222] text-white text-[12px] px-[120px] hidden sm:flex"
+      >
+        <p>Sunday, December 8, 2024</p>
+        <p>Sign in / Join</p>
+      </div>
+      <div
+        class="px-[16px] sm:px-[120px] py-[24px] flex justify-between items-center"
+      >
+        <a href="#" class="block sm:hidden">
+          <img
+            src="./assets/burger-menu.svg"
+            height="75"
+            alt="logo"
+            class="h-[37px] sm:h-[75px]"
+          />
+        </a>
+        <a href="/">
+          <img
+            src="./assets/logo.svg"
+            height="75"
+            alt="logo"
+            class="h-[37px] sm:h-[75px]"
+          />
+        </a>
+        <a href="#" class="block sm:hidden">
+          <img
+            src="./assets/search-navbar.svg"
+            height="75"
+            alt="logo"
+            class="h-[37px] sm:h-[75px]"
+          />
+        </a>
+        <div
+          class="bg-[#F2F2F2] h-[90px] w-[728px] items-center justify-center rounded-[6px] hidden sm:flex"
+        >
+          <p class="text-[#B1B1B1]">Ads</p>
+        </div>
+      </div>
+      <div
+        class="items-center justify-between px-6 py-2 px-[120px] hidden sm:flex"
+      >
+        <ul
+          id="menu"
+          class="flex space-x-6 text-sm font-semibold uppercase"
+        ></ul>
+
+        <button class="p-2 cursor-pointer">
+          <img
+            src="./assets/search-bold.svg"
+            height="20"
+            width="20"
+            alt="search icon"
+          />
+        </button>
+      </div>
+    </div>
+    <div class="h-[85px] sm:h-[240px]"></div>
+
+    <!-- Header -->
+    <div class="bg-[#FAFAFA] px-[16px] sm:px-[120px] py-[21px]">
+      <div class="flex items-center gap-[6px]">
+        <p class="text-[#C3C3C3] text-[12px]">Home</p>
+        <img src="./assets/arrow-breadcumb.svg" height="6" width="12" />
+        <p class="text-[#C3C3C3] text-[12px]">Games</p>
+        <img src="./assets/arrow-breadcumb.svg" height="6" width="12" />
+        <p class="text-[#C3C3C3] text-[12px]">
+          Free daily Australian horoscopes
+        </p>
+      </div>
+      <div class="py-[12px]">
+        <h1 class="text-[28px] font-semibold">
+          Free daily Australian horoscopes
+        </h1>
+        <p class="sm:w-1/2">
+          Discover what the stars have aligned for you today - from romance and
+          fortune to career moves and personal growth. Our daily Australian
+          horoscopes tap into ancient celestial wisdom to illuminate your path
+          forward.
+        </p>
+        <p class="py-[24px]">
+          Ready to explore your cosmic forecast? Select your zodiac sign below
+          for your free daily Australian horoscope.
+        </p>
+      </div>
+    </div>
+
+    <div class="px-[16px] sm:px-[120px] py-[63px] text-[20px] font-bold">
+      <p>
+        Click on your star sign to read your free daily Australian horoscope.
+      </p>
+      <div id="horoscope-menu" class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-[32px]"></div>
+    </div>
+
+    <div
+      class="py-[80px] px-[16px] sm:px-[120px] bg-[#FAFAFA]"
+      id="horoscope-container"
+    ></div>
+
+    <!-- footer -->
+    <div
+      class="grid sm:grid-cols-3 grid-rows-1 gap-20 bg-[#111111] text-white pt-[80px] pb-[40px] sm:py-[80px] px-[13px] sm:px-[223px]"
+    >
+      <div class="flex flex-col gap-[10px]">
+        <a href="#">Privacy policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Terms and Conditions</a>
+        <a href="#">Editorial Policy</a>
+        <a href="#">FAQs</a>
+      </div>
+      <div class="sm:flex sm:flex-col gap-[20px] text-center sm:text-start">
+        <p class="uppercase font-bold text-xl pb-[12px] sm:pb-0">About Us</p>
+        <p>
+          YourLifeChoices is Australia's most established and trusted digital
+          publication for the 50+ audience, with a core focus on helping
+          Australians navigate midlife and the retirement landscape.<br/><br/>Since 2000,
+          YourLifeChoices has been providing Australians with essential news,
+          articles and retirement resources - and membership is FREE!
+        </p>
+      </div>
+      <div class="text-center sm:text-start">
+        <p class="uppercase font-bold text-xl pb-[20px]">Follow us</p>
+        <div class="flex items-center gap-2 justify-center sm:justify-start">
+          <a href="#">
+            <img src="./assets/fb-logo.svg" height="40" width="40" alt="fb logo" />
+          </a>
+          <a href="#">
+            <img src="./assets/x-logo.svg" height="40" width="40" alt="x logo" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function(e) {
+              e.preventDefault();
+              
+              const targetId = this.getAttribute('href').substring(1);
+              const targetElement = document.getElementById(targetId);
+
+              if (targetElement) {
+                  window.scrollTo({
+                      top: targetElement.offsetTop,
+                      behavior: 'smooth'
+                  });
+              }
+          });
+      });
+    </script>
+
+    <script>
+      const menuItems = [
+        "Home",
+        "Money",
+        "Retirement",
+        "Centrelink",
+        "Property",
+        "Health",
+        "Travel",
+        "Life",
+        "Games",
+        "Forum",
+        "Podcast",
+        "About Us",
+      ];
+
+      const dropdownMenus = [
+        "Money",
+        "Retirement",
+        "Centrelink",
+        "Life",
+        "Games",
+        "About Us",
+      ];
+
+      const menuList = document.getElementById("menu");
+
+      menuItems.forEach((item) => {
+        const li = document.createElement("li");
+        li.className = "relative flex items-center gap-1";
+
+        const link = document.createElement("a");
+        link.href = "#";
+        link.className = "hover:text-gray-700";
+        link.textContent = item;
+
+        li.appendChild(link);
+
+        if (dropdownMenus.includes(item)) {
+          const dropdownIcon = document.createElement("span");
+          dropdownIcon.className = "ml-1";
+          const dropdownIconImg = document.createElement("img");
+          dropdownIconImg.src = "./assets/down.svg";
+          dropdownIconImg.alt = "dropdown icon";
+          dropdownIcon.appendChild(dropdownIconImg);
+          li.appendChild(dropdownIcon);
+        }
+
+        menuList.appendChild(li);
+      });
+    </script>
+
+    <script>
+      const menuHoroscope = document.getElementById("horoscope-menu");
+      const dataHoroscope = [
+        {
+          title: "Aries",
+          date: "21 Mar – 19 Apr",
+          color: "#FFF9E7",
+          logo: "./assets/horoscopes/aries.svg",
+        },
+        {
+          title: "Taurus",
+          date: "20 Apr – 20 May",
+          color: "#FFE2DD",
+          logo: "./assets/horoscopes/taurus.svg",
+        },
+        {
+          title: "Gemini",
+          date: "21 May – 20 Jun",
+          color: "#DEDBF9",
+          logo: "./assets/horoscopes/gemini.svg",
+        },
+        {
+          title: "Cancer",
+          date: "21 Jun – 22 Jul",
+          color: "#F1FFDD",
+          logo: "./assets/horoscopes/cancer.svg",
+        },
+        {
+          title: "Leo",
+          date: "23 Jul – 22 Aug",
+          color: "#FFE8D6",
+          logo: "./assets/horoscopes/leo.svg",
+        },
+        {
+          title: "Virgo",
+          date: "23 Aug – 22 Sept",
+          color: "#FFDEED",
+          logo: "./assets/horoscopes/virgo.svg",
+        },
+        {
+          title: "Libra",
+          date: "23 Sep – 22 Oct",
+          color: "#FFECBE",
+          logo: "./assets/horoscopes/libra.svg",
+        },
+        {
+          title: "Scorpio",
+          date: "23 Oct – 21 Nov",
+          color: "#FFDCF9",
+          logo: "./assets/horoscopes/scorpio.svg",
+        },
+        {
+          title: "Sagittarius",
+          date: "22 Nov – 21 Dec",
+          color: "#F3F7FF",
+          logo: "./assets/horoscopes/sagittarius.svg",
+        },
+        {
+          title: "Capricorn",
+          date: "22 Dec – 19 Jan",
+          color: "#FFEFE0",
+          logo: "./assets/horoscopes/capricorn.svg",
+        },
+        {
+          title: "Aquarius",
+          date: "20 Jan – 18 Feb",
+          color: "#E6EAC5",
+          logo: "./assets/horoscopes/aquarius.svg",
+        },
+        {
+          title: "Pisces",
+          date: "19 Feb– 20 Mar",
+          color: "#DDF7FB",
+          logo: "./assets/horoscopes/pisces.svg",
+        },
+      ];
+
+      dataHoroscope.forEach((item) => {
+        const container = document.createElement("a");
+        container.href = `#${item.title}`
+        container.className = `rounded-lg shadow-md bg-[${item.color}] flex flex-col items-center cursor-pointer`;
+        container.innerHTML = `
+                <img src="${item.logo}" alt="${item.title}" class="w-[88px] h-[88px] my-[24px]">
+                <div class="bg-white p-4 w-full rounded-b-lg text-center">
+                  <h3 class="text-lg uppercase font-semibold">${item.title}</h3>
+                  <p class="text-gray-600 text-sm font-[400]">${item.date}</p>
+                </div>
+            `;
+        menuHoroscope.appendChild(container);
+      });
+    </script>
+
+    <script>
+      const dataListHoroscope = [
+        {
+          title: "Aries",
+          date: "(March 21 - April 19)",
+          desc: "Born under the blazing sign of the Ram, you're a natural-born trailblazer led by Mars, the planet of action and courage. As the first sign of the zodiac, you spark the cosmic wheel into motion with your fierce spirit and unstoppable drive.",
+          warior_spirit:
+            "While your lightning-quick decisions and burning desire to be first can sometimes lead to spontaneous choices, it's exactly this raw energy that makes you such a powerful force. When you channel your inner fire mindfully, there's no peak too high to conquer.",
+          fire_elements: [
+            "Magnetic confidence that draws others to your flame",
+            "Bold leadership that inspires action",
+            "Passionate determination to chase your dreams",
+            "Natural courage to venture where others hesitate",
+          ],
+        },
+        {
+          title: "Taurus",
+          date: "(April 20 - May 20)",
+          desc: "Grounded in the richness of Earth, you're the steadfast bull guided by Venus, the planet of beauty and abundance. As the anchor of the zodiac, you transform raw potential into tangible reality with your unwavering determination.",
+          warior_spirit:
+            "While your love of routine and comfort can make you resistant to change, it's this very stability that allows you to build lasting foundations. When you embrace your inner strength mindfully, you create beauty that endures through ages.",
+          fire_elements: [
+            "Remarkable patience that moves mountains",
+            "Natural talent for creating comfort and luxury",
+            "Rock-solid reliability that others depend on",
+            "Deep appreciation for life's sensual pleasures",
+          ],
+        },
+        {
+          title: "Gemini",
+          date: "(May 21 - June 20)",
+          desc: "Dancing through life with dual perspectives, you're the cosmic twins guided by Mercury, the messenger of the gods. As the zodiac's great communicator, you weave connections and ideas into brilliant new patterns.",
+          warior_spirit:
+            "While your multiple interests can sometimes scatter your focus, it's this very diversity that makes you such a fascinating force. When you harness your mental agility mindfully, you become the ultimate synthesiser of knowledge.",
+          fire_elements: [
+            "Quick-silver intellect that sparkles with ideas",
+            "Natural charm that bridges all social circles",
+            "Versatile talents that adapt to any situation",
+            "Curious mind that never stops exploring",
+          ],
+        },
+        {
+          title: "Cancer",
+          date: "(June 21 - July 22)",
+          desc: "Flowing with the tides of emotion, you're the intuitive crab guided by the Moon, keeper of memories and feelings. As the zodiac's nurturer, you create safe harbors where others can find their emotional home.",
+          warior_spirit:
+            "While your sensitivity can sometimes make you retreat into your shell, it's this very depth that makes you such a compassionate force. When you channel your emotional intelligence mindfully, you create unbreakable bonds of love and understanding.",
+          fire_elements: [
+            "Deep intuition that reads between the lines",
+            "Protective instincts that shelter loved ones",
+            "Rich emotional wisdom that understands hearts",
+            "Creative imagination that brings dreams to life",
+          ],
+        },
+        {
+          title: "Leo",
+          date: "(July 23 - August 22)",
+          desc: "Radiating with solar power, you're the majestic lion guided by the Sun itself, the center of our cosmic dance. As the zodiac's natural performer, you illuminate the world with your warmth and creative brilliance.",
+          warior_spirit:
+            "While your love of the spotlight can sometimes overshadow others, it's this very radiance that makes you such an inspiring force. When you shine your light mindfully, you have the power to warm hearts and ignite dreams.",
+          fire_elements: [
+            "Natural charisma that commands attention",
+            "Generous spirit that uplifts others",
+            "Creative power that brings joy to life",
+            "Regal confidence that inspires loyalty",
+          ],
+        },
+        {
+          title: "Virgo",
+          date: "(August 23 - September 22)",
+          desc: "Moving with precise grace, you're the cosmic perfectionist guided by Mercury, the planet of analysis and communication. As the zodiac's master craftsperson, you transform chaos into elegance with your careful attention to detail.",
+          warior_spirit:
+            "While your quest for perfection can sometimes lead to overthinking, it's this very precision that makes you such a valuable force. When you apply your talents mindfully, you create order from chaos and beauty from simplicity.",
+          fire_elements: [
+            "Keen analytical mind that solves puzzles",
+            "Healing touch that makes things whole",
+            "Precise skill that creates excellence",
+            "Practical wisdom that improves lives",
+          ],
+        },
+        {
+          title: "Libra",
+          date: "(September 23 - October 22)",
+          desc: "Dancing in perfect balance, you're the cosmic diplomat guided by Venus, the planet of harmony and beauty. As the zodiac's peacemaker, you weave discord into harmony with your natural grace and charm.",
+          warior_spirit:
+            "While your desire for harmony can sometimes lead to indecision, it's this very balance that makes you such a unifying force. When you wield your diplomatic powers mindfully, you create peace and beauty in equal measure.",
+          fire_elements: [
+            "Diplomatic skill that bridges differences",
+            "Artistic eye that creates beauty",
+            "Social grace that charms hearts",
+            "Fair mind that seeks justice",
+          ],
+        },
+        {
+          title: "Scorpio",
+          date: "(October 23 - November 21)",
+          desc: "Delving into life's deepest mysteries, you're the cosmic investigator guided by Pluto and Mars, planets of transformation and power. As the zodiac's most intense sign, you pierce through surface illusions to uncover hidden truths.",
+          warior_spirit:
+            "While your emotional depths can sometimes lead to obsessive thinking, it's this very intensity that makes you such a transformative force. When you channel your power mindfully, you have the ability to heal and regenerate.",
+          fire_elements: [
+            "Magnetic intensity that draws others close",
+            "Penetrating insight that sees through facades",
+            "Powerful resilience that rises from challenges",
+            "Deep passion that transforms lives",
+          ],
+        },
+        {
+          title: "Sagittarius",
+          date: "(November 22 - December 21)",
+          desc: "Aiming your bow at distant horizons, you're the cosmic explorer guided by Jupiter, planet of expansion and wisdom. As the zodiac's adventurer, you chase knowledge and truth across physical and philosophical landscapes.",
+          warior_spirit:
+            "While your love of freedom can sometimes make you restless, it's this very quest that makes you such an inspiring force. When you direct your arrows mindfully, you lead others to broader perspectives and greater understanding.",
+          fire_elements: [
+            "Boundless optimism that inspires hope",
+            "Adventurous spirit that seeks truth",
+            "Philosophical mind that expands horizons",
+            "Joyful energy that lifts spirits",
+          ],
+        },
+        {
+          title: "Capricorn",
+          date: "(December 22 - January 19)",
+          desc: "Climbing steadily toward your goals, you're the cosmic achiever guided by Saturn, planet of discipline and structure. As the zodiac's master builder, you transform ambition into lasting accomplishment through patient persistence.",
+          warior_spirit:
+            "While your drive for success can sometimes make you too serious, it's this very determination that makes you such a reliable force. When you apply your ambition mindfully, you create legacies that stand the test of time.",
+          fire_elements: [
+            "Unwavering ambition that reaches summits",
+            "Strategic mind that plans for success",
+            "Strong integrity that builds trust",
+            "Natural authority that commands respect",
+          ],
+        },
+        {
+          title: "Aquarius",
+          date: "(January 20 - February 18)",
+          desc: "Climbing steadily toward your goals, you're the cosmic achiever guided by Saturn, planet of discipline and structure. As the zodiac's master builder, you transform ambition into lasting accomplishment through patient persistence.",
+          warior_spirit:
+            "While your unconventional nature can sometimes make you seem detached, it's this very uniqueness that makes you such a progressive force. When you channel your revolutionary ideas mindfully, you have the power to transform society for the better.",
+          fire_elements: [
+            "Brilliant originality that sparks innovation",
+            "Humanitarian spirit that fights for progress",
+            "Independent mind that breaks boundaries",
+            "Visionary insight that glimpses the future",
+          ],
+        },
+        {
+          title: "Pisces",
+          date: "(February 19 - March 20)",
+          desc: "Swimming in the cosmic ocean, you're the mystical dreamer guided by Neptune, planet of inspiration and spirituality. As the zodiac's empath, you dissolve boundaries between reality and imagination, self and other.",
+          warior_spirit:
+            "While your sensitivity can sometimes make you feel overwhelmed, it's this very openness that makes you such a compassionate force. When you direct your intuitive powers mindfully, you help others connect with their higher selves.",
+          fire_elements: [
+            "Boundless imagination that creates magic",
+            "Deep empathy that heals hearts",
+            "Artistic vision that inspires beauty",
+            "Spiritual wisdom that transcends limits",
+          ],
+        },
+      ];
+
+      const container = document.getElementById("horoscope-container");
+
+      dataListHoroscope.forEach((horoscope) => {
+        const card = document.createElement("div");
+        card.id = horoscope.title
+        card.className =
+          "bg-white py-[24px] sm:py-10 px-[24px] sm:px-16 rounded-xl border border-gray-300 mb-6 divide-y-2 divide-[#E4E4E4]";
+
+        card.innerHTML = `
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-[16px] sm:gap-10 pb-8 border-b-2">
+                        <div class="p-[12px] sm:p-5 rounded-full bg-yellow-100">
+                            <img
+                              src="./assets/horoscopes/${horoscope.title.toLowerCase()}.svg"
+                              height="80" width="80" alt="${horoscope.title}"
+                              class="h-[48px] w-[48px] sm:h-[80px] sm:w-[80px]"
+                            />
+                        </div>
+                        <div class="flex flex-col">
+                            <p class="font-bold text-2xl pb-4">
+                              ${horoscope.title} ${horoscope.date}
+                            </p>
+                            <p class="text-base">${horoscope.desc}</p>
+                        </div>
+                    </div>
+                    <div class="sm:grid sm:grid-cols-5 gap-4 sm:pt-8 divide-y-2 sm:divide-y-0 sm:divide-x-2 divide-gray-300">
+                        <div class="sm:col-span-3 py-8 sm:py-0 flex flex-col justify-between">
+                          <div>
+                            <p class="font-bold text-base" style="font-family: Georgia, serif;">Your Warrior Spirit:</p>
+                            <p class="text-sm py-4 sm:pr-12">${
+                              horoscope.warior_spirit
+                            }</p>
+                          </div>
+                          <a href="/detail.html" class="text-red-500 underline font-bold cursor-pointer">
+                            Click here for your free daily ${horoscope.title} horoscope
+                          </a>
+                        </div>
+                        <div class="sm:col-span-2 col-start-4 pt-8 sm:pt-0">
+                            <p class="font-bold text-base pb-[16px]" style="font-family: Georgia, serif;">Your Fire Element Gifts:</p>
+                            <div class="flex flex-col gap-2">
+                                ${horoscope.fire_elements
+                                  .map(
+                                    (el) => `
+                                    <div class="flex items-center gap-2">
+                                        <img src="./assets/checkfill.svg" height="24" width="24" alt="check">
+                                        <p class="text-sm font-bold">${el}</p>
+                                    </div>
+                                `
+                                  )
+                                  .join("")}
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+        container.appendChild(card);
+      });
+    </script>
+  </body>
+</html>

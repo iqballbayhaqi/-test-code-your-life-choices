@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detail Horoscope</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              georgia: ["Georgia", "serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="bg-white drop-shadow-md fixed top-0 z-9 w-full">
+      <div
+        class="item-center gap-[32px] p-4 bg-[#222222] text-white text-[12px] px-[120px] hidden sm:flex"
+      >
+        <p>Sunday, December 8, 2024</p>
+        <p>Sign in / Join</p>
+      </div>
+      <div
+        class="px-[16px] sm:px-[120px] py-[24px] flex justify-between items-center"
+      >
+        <a href="#" class="block sm:hidden">
+          <img
+            src="./assets/burger-menu.svg"
+            height="75"
+            alt="logo"
+            class="h-[37px] sm:h-[75px]"
+          />
+        </a>
+        <a href="/">
+          <img
+            src="./assets/logo.svg"
+            height="75"
+            alt="logo"
+            class="h-[37px] sm:h-[75px]"
+          />
+        </a>
+        <a href="#" class="block sm:hidden">
+          <img
+            src="./assets/search-navbar.svg"
+            height="75"
+            alt="logo"
+            class="h-[37px] sm:h-[75px]"
+          />
+        </a>
+        <div
+          class="bg-[#F2F2F2] h-[90px] w-[728px] items-center justify-center rounded-[6px] hidden sm:flex"
+        >
+          <p class="text-[#B1B1B1]">Ads</p>
+        </div>
+      </div>
+      <div
+        class="items-center justify-between px-6 py-2 px-[120px] hidden sm:flex"
+      >
+        <ul
+          id="menu"
+          class="flex space-x-6 text-sm font-semibold uppercase"
+        ></ul>
+
+        <button class="p-2 cursor-pointer">
+          <img
+            src="./assets/search-bold.svg"
+            height="20"
+            width="20"
+            alt="search icon"
+          />
+        </button>
+      </div>
+    </div>
+    <div class="h-[85px] sm:h-[240px]"></div>
+
+    <div class="pt-[48px] px-[16px] sm:px-[223px] relative bg-[#FAFAFA]">
+      <div class="min-h-[600px] bg-white absolute top-0"></div>
+      <div class="flex items-center gap-[24px] pb-[39px] flex-col sm:flex-row">
+        <div class="flex items-center justify-start w-full sm:w-[120px] gap-[24px]">
+          <img
+            src="./assets/horoscopes/aries.svg"
+            alt="logo"
+            class="sm:h-[100px] sm:w-[120px] p-[10px] sm:p-[20px] bg-[#FFF9E7] rounded-full"
+          />
+          <h1 class="uppercase font-bold text-[28px] block sm:hidden">Aries</h1>
+        </div>
+        <div>
+          <h1 class="uppercase font-bold text-[28px] hidden sm:block">Aries</h1>
+          <p class="text-[16px]">
+            Born under the blazing sign of the Ram, you're a natural-born
+            trailblazer led by Mars, the planet of action and courage. As the
+            first sign of the zodiac, you spark the cosmic wheel into motion
+            with your fierce spirit and unstoppable drive.
+          </p>
+        </div>
+      </div>
+      <div class="">
+        <div class="shadow-lg rounded-2xl bg-white py-[24px] sm:py-[48px] px-[24px] sm:px-[64px]">
+          <div class="flex items-center gap-[24px]">
+            <h1 class="text-[24px] sm:text-[32px] uppercase font-semibold">Forecast</h1>
+            <div
+              class="flex items-center bg-[#F6F6F6] rounded-lg py-[8px] px-[12px] gap-[8px]"
+            >
+              <img
+                src="./assets/date-fill.svg"
+                height="24"
+                width="24"
+                alt="date-fill"
+              />
+              <p class="text-[18px] font-semibold sm:font-normal">Feb 22, 2025</p>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-[32px]">
+            <div class="grid grid-cols-1 sm:grid-cols-3 grid-rows-1 gap-[24px] pt-[32px]">
+              <div class="border border-[#DDDDDD] rounded-lg p-[16px]">
+                <p class="font-bold text-[16px] pb-[9px]">
+                  Your compatible sign today for:
+                </p>
+                <div class="flex flex-col gap-[9px]">
+                  <div
+                    class="flex items-center grid grid-cols-2 border border-[#DDDDDD] rounded-full"
+                  >
+                    <p class="font-bold text-[16px] py-[8px] px-[16px]">Love</p>
+                    <p
+                      class="font-bold text-[16px] bg-[#2C2C2C] text-white py-[8px] px-[16px] rounded-r-full"
+                    >
+                      Libra
+                    </p>
+                  </div>
+                  <div
+                    class="flex items-center grid grid-cols-2 border border-[#DDDDDD] rounded-full"
+                  >
+                    <p class="font-bold text-[16px] py-[8px] px-[16px]">
+                      Friendship
+                    </p>
+                    <p
+                      class="font-bold text-[16px] bg-[#2C2C2C] text-white py-[8px] px-[16px] rounded-r-full"
+                    >
+                      Aquarius
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="border border-[#DDDDDD] rounded-lg p-[16px] flex flex-col"
+              >
+                <p class="font-bold text-[16px] pb-[9px]">
+                  Your lucky numbers for today:
+                </p>
+                <div class="grid grid-cols-3 grid-rows-2 gap-4 h-full">
+                  <div
+                    class="bg-[#F4F4F4] rounded-lg flex items-center justify-center text-[#ED1B33] text-[24px] font-bold"
+                  >
+                    4
+                  </div>
+                  <div
+                    class="bg-[#F4F4F4] rounded-lg flex items-center justify-center text-[#ED1B33] text-[24px] font-bold"
+                  >
+                    11
+                  </div>
+                  <div
+                    class="bg-[#F4F4F4] rounded-lg flex items-center justify-center text-[#ED1B33] text-[24px] font-bold"
+                  >
+                    20
+                  </div>
+                  <div
+                    class="bg-[#F4F4F4] rounded-lg flex items-center justify-center text-[#ED1B33] text-[24px] font-bold"
+                  >
+                    27
+                  </div>
+                  <div
+                    class="bg-[#F4F4F4] rounded-lg flex items-center justify-center text-[#ED1B33] text-[24px] font-bold"
+                  >
+                    33
+                  </div>
+                  <div
+                    class="bg-[#F4F4F4] rounded-lg flex items-center justify-center text-[#ED1B33] text-[24px] font-bold"
+                  >
+                    42
+                  </div>
+                </div>
+              </div>
+              <div class="border border-[#DDDDDD] rounded-lg p-[16px]">
+                <p class="font-bold text-[16px] pb-[9px]">
+                  This week's moon phase is:
+                </p>
+                <p class="font-light text-[24px]">Waning Crescent</p>
+              </div>
+            </div>
+            <div class="border border-[#DDDDDD] rounded-lg p-[16px]">
+              <p class="font-bold text-[16px] pb-[9px]">
+                Your compatible sign today for:
+              </p>
+
+              <div class="grid grid-cols-1 sm:grid-cols-4 grid-rows-1 gap-4">
+                <div
+                  class="flex items-center justify-between border border-[#DDDDDD] rounded-full py-[10px] px-[16px]"
+                >
+                  <p class="font-bold text-[16px]">Love</p>
+                  <div class="flex items-center">
+                    <img
+                      src="./assets/star-filled.svg"
+                      height="20"
+                      width="20"
+                    />
+                    <img
+                      src="./assets/star-filled.svg"
+                      height="20"
+                      width="20"
+                    />
+                    <img
+                      src="./assets/star-filled.svg"
+                      height="20"
+                      width="20"
+                    />
+                    <img src="./assets/star-sharp.svg" height="20" width="20" />
+                    <img src="./assets/star-sharp.svg" height="20" width="20" />
+                  </div>
+                </div>
+                <div
+                  class="flex items-center justify-between border border-[#DDDDDD] rounded-full py-[10px] px-[16px]"
+                >
+                  <p class="font-bold text-[16px]">Money</p>
+                  <div class="flex items-center">
+                    <img
+                      src="./assets/star-filled.svg"
+                      height="20"
+                      width="20"
+                    />
+                    <img
+                      src="./assets/star-filled.svg"
+                      height="20"
+                      width="20"
+                    />
+                    <img
+                      src="./assets/star-filled.svg"
+                      height="20"
+                      width="20"
+                    />
+                    <img src="./assets/star-sharp.svg" height="20" width="20" />
+                    <img src="./assets/star-sharp.svg" height="20" width="20" />
+                  </div>
+                </div>
+                <div
+                  class="flex items-center justify-between border border-[#DDDDDD] rounded-full py-[10px] px-[16px]"
+                >
+                  <p class="font-bold text-[16px]">Mood</p>
+                  <div class="flex items-center">
+                    <img
+                      src="./assets/star-filled.svg"
+                      height="20"
+                      width="20"
+                    />
+                    <img
+                      src="./assets/star-filled.svg"
+                      height="20"
+                      width="20"
+                    />
+                    <img
+                      src="./assets/star-filled.svg"
+                      height="20"
+                      width="20"
+                    />
+                    <img src="./assets/star-sharp.svg" height="20" width="20" />
+                    <img src="./assets/star-sharp.svg" height="20" width="20" />
+                  </div>
+                </div>
+                <div
+                  class="flex items-center justify-between border border-[#DDDDDD] rounded-full py-[10px] px-[16px]"
+                >
+                  <p class="font-bold text-[16px]">Style</p>
+                  <div class="flex items-center">
+                    <img
+                      src="./assets/star-filled.svg"
+                      height="20"
+                      width="20"
+                    />
+                    <img
+                      src="./assets/star-filled.svg"
+                      height="20"
+                      width="20"
+                    />
+                    <img
+                      src="./assets/star-filled.svg"
+                      height="20"
+                      width="20"
+                    />
+                    <img src="./assets/star-sharp.svg" height="20" width="20" />
+                    <img src="./assets/star-sharp.svg" height="20" width="20" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="py-[64px]">
+          <h1 class="uppercase font-semibold text-[28px] pb-[32px]">
+            About Today
+          </h1>
+
+          <div
+            class="bg-white rounded-2xl border border-[#EFEFEF] p-[23px] mb-[24px]"
+          >
+            <p class="text-[20px] font-bold pb-[16px]">
+              Celebrities born on: Feb 22
+            </p>
+            <p class="text-[16px]">
+              Drew Barrymore, Edward Kennedy, Michael Chang, Julius Erving, Miko
+              Hughes, Jeri Ryan, Bradley Nowell, Steve "Crocodile Hunter" Irwin,
+              Carly Milne, Lea Salonga
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-[40px] gap-y-[24px] mb-[24px]">
+            <div class="bg-white rounded-2xl border border-[#EFEFEF] p-[23px]">
+              <p class="text-[20px] font-bold pb-[16px]">
+                For those of us born on: Feb 22
+              </p>
+              <p class="text-[16px]">
+                Happy birthday! The months ahead will begin with a period of
+                consolidation where you will find yourself attending to all
+                those loose ends in your life, whether they relate to emotional
+                relationships, home affairs or work related projects. As spring
+                turns to summer, so your thoughts will turn to love and one
+                relationship in particular will begin to blossom in ways that
+                you had not expected. August may see some financial setbacks,
+                but don't dwell on this since they will only be short lived. In
+                the fall you will receive a boost to a cherished ambition
+                although a lot of effort on your part will be required if you
+                are going to turn a dream into a reality. Towards the end of the
+                year family will be increasingly important in your life. There
+                are definite signs that a long term rift may be on the verge of
+                being healed at this time!
+              </p>
+            </div>
+            <div class="bg-white rounded-2xl border border-[#EFEFEF] p-[23px]">
+              <p class="text-[20px] font-bold pb-[16px]">
+                Celebrity Astro Gossip:
+              </p>
+              <p class="text-[16px]">
+                Whoopi Goldberg continues to be hugely respected for her acting
+                talents and what is regarded as a high level of integrity
+                despite the fact that she has not been very prominent in the
+                world of movies for the last few years. However, all that may be
+                about to change as Whoopi is taking charge of a stage version of
+                her massive hit Sister Act. You should expect to see a renewed
+                interest by the studios in Whoopi's acting ability over the next
+                month or so.
+              </p>
+            </div>
+            <div class="bg-white rounded-2xl border border-[#EFEFEF] p-[23px]">
+              <p class="text-[20px] font-bold pb-[16px]">
+                Today's Motivational Quote
+              </p>
+              <p class="text-[16px]">
+                Be glad of life because it gives you the chance to love and to
+                work and to play and to look up at the stars. -- Henry Van Dyke
+              </p>
+            </div>
+            <div class="bg-white rounded-2xl border border-[#EFEFEF] p-[23px]">
+              <p class="text-[20px] font-bold pb-[16px]">
+                Today's Chinese Proverb
+              </p>
+              <p class="text-[16px]">
+                When you meet someone better than yourself, turn your thoughts
+                to becoming his equal. When you meet someone not as good as you
+                are, look within and examine your own self.
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-[#EFEFEF] p-[23px]">
+            <p class="text-[20px] font-bold pb-[16px]">
+              Today's Wisdom from around the World:
+            </p>
+            <p class="text-[16px] italic pb-[12px]">
+              If you can't lick 'em, join 'em.
+            </p>
+            <p class="text-[16px] font-bold">- American Proverb</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="px-[16px] sm:px-[223px] bg-white py-[64px]">
+      <h1 class="uppercase font-semibold text-[28px] pb-[32px]">
+        ARIES HOROSCOPE EXPLAINED
+      </h1>
+      <p class="text-[16px]">
+        <b>Aries</b> is the ‘youngest’ star sign and originates from the
+        constellation of the same name. Symbolised by the ram, Aries is a fire
+        sign ruled by Mars – the god of war. This means they can have quite a
+        temper, and plenty of passion. <br /><br />
+        Aries are born between 21 March and 19 April.
+      </p>
+
+      <div class="pt-[48px]">
+        <h1 class="uppercase font-semibold text-[28px] pb-[32px]">
+          PERSONALITY TRAITS
+        </h1>
+        <div
+          id="personal-container"
+          class="shadow-lg py-[24px] sm:py-[48px] px-[24px] sm:px-[64px] rounded-2xl grid grid-cols-2 sm:grid-cols-5 gap-[16px]"
+        ></div>
+        <p class="text-[16px] pt-[32px]">
+          Aries can be headstrong. Best not to argue with an Aries, because
+          things can quickly escalate.
+          <br /><br />
+          They’re great leaders and are focused on work and in life. They can be
+          ambitious. They often act now and consider the consequences later,
+          especially when those consequences only apply to others.
+          <br /><br />
+          Aries most positive traits are their positivity and direct approach.
+          They don’t play games with people. They have a good sense of adventure
+          and can be impulsive.
+          <br /><br />
+          The best matches for an Aries are Gemini, Leo, Sagittarius, and
+          Aquarius.
+        </p>
+
+        <h1 class="uppercase font-semibold text-[28px] pb-[32px] pt-[48px]">
+          FAMOUS ARIES
+        </h1>
+        <div
+          id="famouse-container"
+          class="shadow-lg py-[24px] sm:py-[48px] px-[24px] sm:px-[64px] rounded-2xl grid grid-cols-2 sm:grid-cols-5 gap-[16px]"
+        ></div>
+
+        <div class="flex items-start gap-[24px] py-[24px] px-[32px] bg-[#FFFCF9] border border-[#EBDED1] rounded-lg mt-[40px]">
+          <img
+            src="./assets/profile-check.svg"
+            class="h-[80px] w-[80px] p-[12px] bg-[#FFEDEF] rounded-full"
+            alt="profile check"
+          />
+          <div>
+            <p class="text-[16px]">
+              <b>While you’re here, why not sign up for our daily editions?</b>
+              They’re packed with essential retirement resources, information
+              and news relevant to your life stage. Try some of our other free
+              online games and puzzles, too!
+            </p>
+            <button class="bg-[#EF1B33] text-white px-[36px] py-[6px] rounded-full mt-[12px]">Sign Up Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <div
+      class="grid sm:grid-cols-3 grid-rows-1 gap-20 bg-[#111111] text-white pt-[80px] pb-[40px] sm:py-[80px] px-[13px] sm:px-[223px]"
+    >
+      <div class="flex flex-col gap-[10px]">
+        <a href="#">Privacy policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Terms and Conditions</a>
+        <a href="#">Editorial Policy</a>
+        <a href="#">FAQs</a>
+      </div>
+      <div class="sm:flex sm:flex-col gap-[20px] text-center sm:text-start">
+        <p class="uppercase font-bold text-xl pb-[12px] sm:pb-0">About Us</p>
+        <p>
+          YourLifeChoices is Australia's most established and trusted digital
+          publication for the 50+ audience, with a core focus on helping
+          Australians navigate midlife and the retirement landscape.<br /><br />Since
+          2000, YourLifeChoices has been providing Australians with essential
+          news, articles and retirement resources - and membership is FREE!
+        </p>
+      </div>
+      <div class="text-center sm:text-start">
+        <p class="uppercase font-bold text-xl pb-[20px]">Follow us</p>
+        <div class="flex items-center gap-2 justify-center sm:justify-start">
+          <a href="#">
+            <img
+              src="./assets/fb-logo.svg"
+              height="40"
+              width="40"
+              alt="fb logo"
+            />
+          </a>
+          <a href="#">
+            <img
+              src="./assets/x-logo.svg"
+              height="40"
+              width="40"
+              alt="x logo"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const menuItems = [
+        "Home",
+        "Money",
+        "Retirement",
+        "Centrelink",
+        "Property",
+        "Health",
+        "Travel",
+        "Life",
+        "Games",
+        "Forum",
+        "Podcast",
+        "About Us",
+      ];
+
+      const dropdownMenus = [
+        "Money",
+        "Retirement",
+        "Centrelink",
+        "Life",
+        "Games",
+        "About Us",
+      ];
+
+      const menuList = document.getElementById("menu");
+
+      menuItems.forEach((item) => {
+        const li = document.createElement("li");
+        li.className = "relative flex items-center gap-1";
+
+        const link = document.createElement("a");
+        link.href = "#";
+        link.className = "hover:text-gray-700";
+        link.textContent = item;
+
+        li.appendChild(link);
+
+        if (dropdownMenus.includes(item)) {
+          const dropdownIcon = document.createElement("span");
+          dropdownIcon.className = "ml-1";
+          const dropdownIconImg = document.createElement("img");
+          dropdownIconImg.src = "./assets/down.svg";
+          dropdownIconImg.alt = "dropdown icon";
+          dropdownIcon.appendChild(dropdownIconImg);
+          li.appendChild(dropdownIcon);
+        }
+
+        menuList.appendChild(li);
+      });
+    </script>
+
+    <script>
+      const personalTraits = [
+        "Adventurous",
+        "Action-oriented",
+        "Bold",
+        "Brave",
+        "Confident",
+        "Courageous",
+        "Determined",
+        "Direct & straight-forward",
+        "Dynamic",
+        "Impatient",
+        "Impulsive",
+        "Independent",
+        "Passionate",
+        "Risk-taker",
+      ];
+      const famNames = [
+        "Reese Witherspoon",
+        "Paul Rudd",
+        "Jessica Chastain",
+        "Elton John",
+        "Lady Gaga",
+        "Russell Crowe",
+        "Jackie Chan",
+        "Victoria Beckham",
+        "Keira Knightley",
+        "Steven Tyler",
+        "Mariah Carey",
+        "Ewan McGregor",
+        "Celine Dion",
+        "Marc Jacobs",
+        "Pharrell Williams",
+        "Eddie Murphy",
+        "Robert Downey Jr.",
+      ];
+
+      const personalContainer = document.getElementById("personal-container");
+      const famContainer = document.getElementById("famouse-container");
+
+      personalTraits.forEach((name) => {
+        const div = document.createElement("div");
+        div.className =
+          "border border-[#D9D9D9] rounded-lg flex items-center justify-center bg-[#FBFBFB]";
+
+        const p = document.createElement("p");
+        p.className = "py-[16px] text-[16px] text-[#2C2C2C] text-center";
+        p.textContent = name;
+
+        div.appendChild(p);
+        personalContainer.appendChild(div);
+      });
+
+      famNames.forEach((name) => {
+        const div = document.createElement("div");
+        div.className =
+          "border border-[#D9D9D9] rounded-lg flex items-center justify-center bg-[#FBFBFB]";
+
+        const p = document.createElement("p");
+        p.className = "py-[16px] text-[16px] text-[#2C2C2C]";
+        p.textContent = name;
+
+        div.appendChild(p);
+        famContainer.appendChild(div);
+      });
+    </script>
+  </body>
+</html>
