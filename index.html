@@ -26,20 +26,20 @@
     <!-- Navbar -->
     <div class="bg-white drop-shadow-md fixed top-0 z-9 w-full">
       <div
-        class="item-center gap-[32px] p-4 bg-[#222222] text-white text-[12px] px-[120px] hidden sm:flex"
+        class="item-center gap-[32px] p-4 bg-[#222222] text-white text-[12px] px-[120px] hidden lg:flex"
       >
         <p>Sunday, December 8, 2024</p>
         <p>Sign in / Join</p>
       </div>
       <div
-        class="px-[16px] sm:px-[120px] py-[24px] flex justify-between items-center"
+        class="px-[16px] lg:px-0 lg:w-[1200px] lg:mx-auto py-[24px] flex justify-between items-center"
       >
-        <a href="#" class="block sm:hidden">
+        <a href="#" class="block lg:hidden">
           <img
             src="./assets/burger-menu.svg"
             height="75"
             alt="logo"
-            class="h-[37px] sm:h-[75px]"
+            class="h-[37px] lg:h-[75px]"
           />
         </a>
         <a href="/">
@@ -47,25 +47,25 @@
             src="./assets/logo.svg"
             height="75"
             alt="logo"
-            class="h-[37px] sm:h-[75px]"
+            class="h-[37px] lg:h-[75px]"
           />
         </a>
-        <a href="#" class="block sm:hidden">
+        <a href="#" class="block lg:hidden">
           <img
             src="./assets/search-navbar.svg"
             height="75"
             alt="logo"
-            class="h-[37px] sm:h-[75px]"
+            class="h-[37px] lg:h-[75px]"
           />
         </a>
         <div
-          class="bg-[#F2F2F2] h-[90px] w-[728px] items-center justify-center rounded-[6px] hidden sm:flex"
+          class="bg-[#F2F2F2] h-[90px] w-[728px] items-center justify-center rounded-[6px] hidden lg:flex"
         >
           <p class="text-[#B1B1B1]">Ads</p>
         </div>
       </div>
       <div
-        class="items-center justify-between px-6 py-2 px-[120px] hidden sm:flex"
+        class="items-center justify-between px-6 py-2 px-[120px] hidden lg:flex"
       >
         <ul
           id="menu"
@@ -82,54 +82,58 @@
         </button>
       </div>
     </div>
-    <div class="h-[85px] sm:h-[240px]"></div>
+    <div class="h-[85px] lg:h-[240px]"></div>
 
     <!-- Header -->
-    <div class="bg-[#FAFAFA] px-[16px] sm:px-[120px] py-[21px]">
-      <div class="flex items-center gap-[6px]">
-        <p class="text-[#C3C3C3] text-[12px]">Home</p>
-        <img src="./assets/arrow-breadcumb.svg" height="6" width="12" />
-        <p class="text-[#C3C3C3] text-[12px]">Games</p>
-        <img src="./assets/arrow-breadcumb.svg" height="6" width="12" />
-        <p class="text-[#C3C3C3] text-[12px]">
-          Free daily Australian horoscopes
-        </p>
-      </div>
-      <div class="py-[12px]">
-        <h1 class="text-[28px] font-semibold">
-          Free daily Australian horoscopes
-        </h1>
-        <p class="sm:w-1/2">
-          Discover what the stars have aligned for you today - from romance and
-          fortune to career moves and personal growth. Our daily Australian
-          horoscopes tap into ancient celestial wisdom to illuminate your path
-          forward.
-        </p>
-        <p class="py-[24px]">
-          Ready to explore your cosmic forecast? Select your zodiac sign below
-          for your free daily Australian horoscope.
-        </p>
-      </div>
-    </div>
+     <div class="bg-[#FAFAFA]">
+       <div class=" px-[16px] lg:px-0 md:w-[800px] lg:w-[1200px] md:mx-auto py-[21px]">
+         <div class="flex items-center gap-[6px]">
+           <p class="text-[#C3C3C3] text-[12px]">Home</p>
+           <img src="./assets/arrow-breadcumb.svg" height="6" width="12" />
+           <p class="text-[#C3C3C3] text-[12px]">Games</p>
+           <img src="./assets/arrow-breadcumb.svg" height="6" width="12" />
+           <p class="text-[#C3C3C3] text-[12px]">
+             Free daily Australian horoscopes
+           </p>
+         </div>
+         <div class="py-[12px]">
+           <h1 class="text-[28px] font-semibold lg:pb-[32px]">
+             Free daily Australian horoscopes
+           </h1>
+           <p class="lg:w-1/2">
+             Discover what the stars have aligned for you today - from romance and
+             fortune to career moves and personal growth. Our daily Australian
+             horoscopes tap into ancient celestial wisdom to illuminate your path
+             forward.
+           </p>
+           <p class="py-[24px]">
+             Ready to explore your cosmic forecast? Select your zodiac sign below
+             for your free daily Australian horoscope.
+           </p>
+         </div>
+       </div>
+     </div>
 
-    <div class="px-[16px] sm:px-[120px] py-[63px] text-[20px] font-bold">
+    <div class="px-[16px] md:w-[800px] lg:w-[1200px] md:mx-auto lg:px-0 py-[63px] text-[20px] font-bold">
       <p>
         Click on your star sign to read your free daily Australian horoscope.
       </p>
       <div
         id="horoscope-menu"
-        class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-[32px]"
+        class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pt-[32px]"
       ></div>
     </div>
 
-    <div
-      class="py-[80px] px-[16px] sm:px-[120px] bg-[#FAFAFA]"
-      id="horoscope-container"
-    ></div>
+    <div class="bg-[#FAFAFA]">
+      <div
+        class="py-[80px] px-[16px] lg:px-0 md:w-[800px] lg:w-[1200px] md:mx-auto"
+        id="horoscope-container"
+      ></div>
+    </div>
 
     <!-- footer -->
     <div
-      class="grid sm:grid-cols-3 grid-rows-1 gap-20 bg-[#111111] text-white pt-[80px] pb-[40px] sm:py-[80px] px-[13px] sm:px-[223px]"
+      class="grid sm:grid-cols-3 grid-rows-1 gap-10 sm:gap-20 bg-[#111111] text-white pt-[80px] pb-[40px] sm:py-[80px] px-[13px] sm:px-[223px]"
     >
       <div class="flex flex-col gap-[10px]">
         <a href="#">Privacy policy</a>
@@ -511,16 +515,18 @@
           "bg-white py-[24px] sm:py-10 px-[24px] sm:px-16 rounded-xl border border-gray-300 mb-6 divide-y-2 divide-[#E4E4E4]";
 
         card.innerHTML = `
-                    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-[16px] sm:gap-10 pb-8 border-b-2">
-                        <div class="p-[12px] sm:p-5 rounded-full bg-yellow-100">
+                    <div class="flex sm:grid sm:grid-cols-5 flex-col sm:flex-row items-start sm:items-center pb-8 border-b-2">
+                      <div class="flex items-center justify-center">
+                        <div class="p-[12px] sm:p-5 rounded-full bg-yellow-100 w-fit">
                             <img
                               src="./assets/horoscopes/${horoscope.title.toLowerCase()}.svg"
-                              height="80" width="80" alt="${horoscope.title}"
-                              class="h-[48px] w-[48px] sm:h-[80px] sm:w-[80px]"
+                              alt="${horoscope.title}"
+                              class="h-[48px] w-[48px] sm:h-[80px] sm:w-[80px] object-fit"
                             />
                         </div>
-                        <div class="flex flex-col">
-                            <p class="font-bold text-2xl pb-4">
+                      </div>
+                        <div class="flex flex-col col-span-4 ml-0  lg:ml-4 mt-[16px] lg:mt-0">
+                            <p class="font-bold text-lg sm:text-2xl pb-4">
                               ${horoscope.title} ${horoscope.date}
                             </p>
                             <p class="text-base">${horoscope.desc}</p>
